@@ -5,11 +5,9 @@ using namespace std;
 int main() {
 	//cоздание файла и его заполнение
 	setlocale(LC_ALL, "Russian");
-	ofstream fout("failik.txt”); // создание объекта
-	fout.open("failik.txt"); //объект связывается с файлом?
+	ofstream fout("failik.txt"); // создание объекта
 	fout << "Hello world";
 	fout.close();
-
 	//чтение файла
 	char m[50];
 	ifstream file("failik.txt");
