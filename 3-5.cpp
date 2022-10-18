@@ -1,24 +1,38 @@
 #include <iostream>
 #include <fstream>//для работы с файлами
+#include <string>
 using namespace std;
 
 int main() {
 	//cоздание файла и его заполнение
 	setlocale(LC_ALL, "Russian");
 	ofstream fout("failik.txt"); // создание объекта
-	string filespace;
-	cin >> filespace;
-	fout << filespace;
+	string filespace,  gg;
+	for (int i = 0; i <= 2; i++) {
+		getline(cin, filespace);
+		fout << filespace;
+		fout << '\n';
+	}
 	fout.close();
-	//чтение файла
-	char m[50];
+
+	//char m[1000];
 	ifstream file("failik.txt");
-	file.getline(m, 50);//запись содержимого файла
-	for (int i = 0; i < size(filespace); i++) {
-		if (isdigit(m[i])) {
-			cout << m[i];
+	//file.getline(m, 1000);  //запись содержимого файла
+	string s;
+	while (getline(file, s)) {
+		char m[50] = {0};
+		for (int j = 0; j < s.length(); j++) {
+			m[j] = s[j];
 		}
+		for (int i = 0; i < 50; i++) {
+			if (isdigit(m[i])) {
+				cout << m[i];
+			}
+			else {
+				cout << " ";
+			}
+		}
+		cout << '\n';
 	}
 	return 0;
 }
-
