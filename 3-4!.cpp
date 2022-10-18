@@ -7,7 +7,7 @@ int main() {
 	//cоздание файла и его заполнение
 	setlocale(LC_ALL, "Russian");
 	ofstream fout("failik.txt"); // создание объекта
-	string filespace,  gg;
+	string filespace, gg;
 	for (int i = 0; i <= 9; i++) {
 		getline(cin, filespace);
 		fout << filespace;
@@ -19,20 +19,25 @@ int main() {
 	ifstream file("failik.txt");
 	//file.getline(m, 1000);  //запись содержимого файла
 	string s;
+	int d = 0;
 	while (getline(file, s)) {
-		char m[50] = {0};
+		char m[50] = { 0 };
 		for (int j = 0; j < s.length(); j++) {
 			m[j] = s[j];
 		}
 		for (int i = 0; i < 50; i++) {
 			if (isdigit(m[i])) {
 				cout << m[i];
+				d = d + 1;
 			}
-			if (!isdigit(m[i])&&isdigit(m[i+1])){
+			if (!isdigit(m[i]) && isdigit(m[i + 1])) {
 				cout << " ";
 			}
 		}
 		cout << '\n';
+	}
+	if (d == 0) {
+		cout << " в введенном тексте нет чисел ";
 	}
 	return 0;
 }
