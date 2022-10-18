@@ -28,7 +28,7 @@ int main() {
 			if (isdigit(m[i])) {
 				cout << m[i];
 			}
-			else {
+			if (!isdigit(m[i])&&isdigit(m[i+1])){
 				cout << " ";
 			}
 		}
