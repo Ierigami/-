@@ -8,7 +8,7 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 	ofstream fout("failik.txt"); // создание объекта
 	string filespace,  gg;
-	for (int i = 0; i <= 2; i++) {
+	for (int i = 0; i <= 9; i++) {
 		getline(cin, filespace);
 		fout << filespace;
 		fout << '\n';
