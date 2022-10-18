@@ -1,17 +1,31 @@
 #include <iostream>
 #include <fstream>//для работы с файлами
+#include <string>
+#include <windows.h>
 using namespace std;
 
 int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	//cоздание файла и его заполнение
-	setlocale(LC_ALL, "Russian");
+	setlocale(0, "");
 	ofstream fout("failik.txt"); // создание объекта
-	fout << "Hello world";
-	fout.close();
 	//чтение файла
-	char m[50];
 	ifstream file("failik.txt");
-	file.getline(m, 50);//запись содержимого файла
-	file.close();
-	cout << m;
+	string filespace;
+	for (int i = 0; i <= 3; i++) {
+		setlocale(0, "");
+		getline(cin, filespace);
+		fout << filespace << '\n';
+	}
+	fout.close();
+
+	string s;
+	while (getline(file, s)) {
+		setlocale(0, "");
+		cout << s << '\n';
+		
+	}
 	return 0;
+}
