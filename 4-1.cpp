@@ -10,6 +10,10 @@ int main() {
 	cout << "Введите 10 чисел\n";
 	for (int i = 0; i < 10; i++) {
 		cin >> arr[i];
+		if (!isdigit(arr[i])) {
+			cout << "это не число!!!!!!!!\n";
+			return 0;
+		}
 		fout << arr[i] << " ";
 	}
 	fout.close();
