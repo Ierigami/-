@@ -18,9 +18,10 @@ int main() {
 		for (int i = 0; i < filespace.length() - 1; i++)
 			for (int j = 0; j < filespace.length() - 1; j++)
 				if (tolower(filespace[j]) > tolower(filespace[j + 1])) {
-					char c = filespace[j];
+					/*char c = filespace[j];
 					filespace[j] = filespace[j + 1];
-					filespace[j + 1] = c;
+					filespace[j + 1] = c;*/
+					swap(filespace[j], filespace[j + 1]);
 				}
 		cout << filespace << '\n';
 	}
